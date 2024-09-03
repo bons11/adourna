@@ -1,0 +1,643 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  background-image: url("http://www.designbolts.com/wp-content/uploads/2013/02/Free-Seamless-Wood-Textures-Patterns-For-3D-Mapping-2.jpg");
+  font-family: 'Pacifico', cursive;
+  -webkit-font-smoothing: antialiased;
+  background-image: url(../images/teaserbg.png);
+  background-size: 100% 100%;
+background-repeat: no-repeat;
+background-position: center;
+}
+
+#wrapper {
+  width: 100%;
+  height: 100%;
+  background: hsla(0, 0%, 5%, 0.5);
+  /* opacity: .8; */
+  visibility: hidden;
+  /* transition: all 1.5s ease-in-out; */
+}
+
+#perspective {
+  position: fixed;
+  top: 33%;
+  left: 50%;
+  margin-left: -200px;
+  perspective: 1000;
+}
+
+#container {
+  /* adds shadow to envelope */
+  box-shadow: 0px 2px 10px hsla(0, 0%, 10%, 1);
+  position: relative;
+  width: 400px;
+  height: 280px;
+  transform-style: preserve-3d;
+  z-index: -6;
+  border-radius: 5px;
+  transform: rotate(3deg);
+}
+
+#perspective:hover {
+  transition: all 0.4s ease-in-out;
+  cursor: pointer;
+  transform: rotate(-2deg);
+}
+
+.about_img img{
+    width: 40%;
+clip-path: circle();
+filter: drop-shadow(20px 30px 10px #ffe0a8);
+      border: 6px solid #d3b697;
+      border-radius: 50%;
+      
+  }
+  
+  .aboutimgborder{
+    margin-top: 50px;
+    font-family: 'Sofia', sans-serif;
+  }
+
+.face {
+  position: absolute;
+  top: 10;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  background-image: url(../images/paperbackground.jpg);
+}
+
+.front {
+  /* front of the card before turned */
+  background-image: url(../images/paperbackground.jpg);
+  z-index: 20;
+  border-radius: 5px;
+}
+
+#white {
+  width: 95%;
+  height: 90%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 12px;
+  background-image: url(../images/paperbackground.jpg);
+  border-radius: 5px;
+}
+
+.front h1 {
+  color: #8e5329;
+
+  text-shadow: 0px 1px 1px hsla(0, 0%, 100%, 1);
+  font-size: 2em;
+  line-height: 1em;
+  text-align: center;
+  padding-top: 100px;
+}
+
+.front h1 span {
+  color: #948d88;
+  text-shadow: 0px 1px 1px hsla(0, 0%, 100%, 1);
+  font-size: 0.8em;
+  text-align: center;
+}
+
+.back {
+  /* color of inside of envelope */
+  background-image: url(../images/paperbackground.jpg);
+  transform: rotateY(-180deg);
+}
+
+#open {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 0;
+  width: 100%;
+  
+  border-top: 161px solid rgb(159, 128, 103); /* envelope flap */
+  border-left: 160px solid transparent;
+  border-right: 160px solid transparent;
+  transform-origin: center top;
+  z-index: 10;
+}
+
+#folds {
+  
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 0;
+  height: 0;
+  border-left: 180px solid rgb(167, 131, 101); /* left grey fold envelope back */
+  border-top: 140px solid transparent;
+  border-bottom: 140px solid transparent;
+  z-index: 5;
+}
+
+#folds:after {
+  content: "";
+  position: absolute;
+  bottom: -140px;
+  left: -180px;
+  height: 0;
+  width: 400px;
+
+  border-bottom: 155px solid rgb(159, 128, 103); /* bottom fold envelope back */
+  border-left: 160px solid transparent;
+  border-right: 160px solid transparent;
+}
+
+#folds:before {
+  content: "";
+  position: absolute;
+  top: -140px;
+  right: -220px;
+  width: 100%;
+  height: 0;
+  border-right: 180px solid rgb(167, 131, 101); /* right grey fold envelope back */
+  border-top: 140px solid transparent;
+  border-bottom: 140px solid transparent;
+}
+
+.button {
+  text-align: center;
+  width: 120px;
+  height: auto;
+  padding: 0 1em;
+  position: relative;
+  z-index: 11;
+  transition: none;
+  background:url(../images/stamp.png) no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: 180px;
+  cursor:pointer;
+  font-family: "Sofia", sans-serif;
+  font-weight: bold;
+  text-shadow: 0 -1px 1px #ffffff;
+  text-decoration: none;
+  color: rgb(32, 15, 3);
+  line-height: 130px;
+  display: inline-block;
+  transition: all 0.2s ease-in-out;
+  border-radius: 100%;
+}
+
+.button:active {
+  top: 3px;
+  border-bottom: none;
+}
+
+.button.active {
+  background-color: #d4b944;
+}
+
+.button:hover {
+  background-size: 190px;
+}
+
+.button.con {
+  margin-left: 135px;
+  margin-top: 80px;
+}
+
+.button.send {
+  margin-left: 120px;
+  margin-top: 5px;
+  /* margin-right: auto; */
+}
+
+#letter {
+  background-image: url(../images/letterbgpaper.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  box-shadow: 0px 2px 5px hsla(0, 0%, 10%, 1);
+  border-radius: 5px;
+  position: absolute;
+  top: 3px;
+  left: 0;
+  margin: 0 0 0 5px;
+  width: 390px;
+  height: 200px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+#letter hgroup {
+  margin-top: 20px;
+}
+
+#letter hgroup h1 {
+  font-family: "Sofia", sans-serif;
+  font-size: 1.8em;
+  color: #734c30;
+  text-align: center;
+  text-shadow: 0px 2px 1px rgb(224, 160, 91);
+  font-weight: bold;
+}
+
+#letter hgroup h2 {
+  font-size: 1em;
+  color: hsla(0, 0%, 70%, 1);
+  margin-top: -20px;
+  text-align: center;
+  text-shadow: 0px 1px 1px hsla(0, 0%, 100%, 1);
+}
+
+#letter p{
+  font-family: "Nerko One", sans-serif;
+  text-align: justify;
+	color: #4a2e20;
+	text-shadow: 0px 0px 0px rgb(255, 255, 255); 
+	font-size: 0.95em;
+	line-height:1.35em;
+	margin: 15px 35px 0 35px;
+  font-weight: bolder;
+}
+
+#letter p:first-letter{
+  font-family: 'Sofia', cursive;
+	color: rgb(88, 41, 0);
+	text-shadow: 0px 2px 1px hsla(0,0%,100%,1);
+	font-size: 2.5em;
+	float: left;
+	line-height:0em;
+	padding:10px 6px 10px 0;
+}*/
+
+/* form shtuff */
+
+form {
+  margin-left: auto;
+  margin-right: auto;
+  width: 350px;
+  height: 900px;
+  padding: 30px;
+  border-radius: 10px;
+  overflow: hidden;
+  /* background: blue; */
+  position: relative;
+}
+
+textarea {
+  width: 300px;
+  max-width: 95%;
+  min-height: 110px;
+  max-height: 10%;
+  /* border: 1px solid #0A0A0A; */
+  border-radius: 10px;
+  background-clip: padding-box;
+  display: block;
+  font-family: "Lato", sans-serif;
+  font-size: 18px;
+  color: #fff;
+  padding-left: 20px;
+  padding-right: 10px;
+  padding-top: 12px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  border: 1px solid #b4bdcf;
+  background: #d4e1fc;
+  box-shadow: inset 0 0 7px #a2aaba, 0 -3px 3px #b9b9b5, 0 4px 4px #f4f4f4;
+}
+
+select {
+  width: 70%;
+  height: 48px;
+  line-height: 1.5;
+  border-radius: 10px;
+  color: #fff;
+  display: block;
+  background: transparent;
+  background-color: rgba(0, 0, 0, 0.4);
+  margin-bottom: 20px;
+  display: block;
+  font-family: "Lato", sans-serif;
+  font-size: 18px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 1px solid #b4bdcf;
+  background: #d4e1fc;
+  box-shadow: inset 0 0 7px #a2aaba, 0 -3px 3px #b9b9b5, 0 4px 4px #f4f4f4;
+}
+
+.nameinput,
+.emailinput {
+  width: 300px;
+  height: 40px;
+  border-radius: 10px;
+  background-clip: padding-box;
+  display: block;
+  font-family: "Lato", sans-serif;
+  font-size: 18px;
+  color: #fff;
+  margin-bottom: 20px;
+  border: 1px solid #b4bdcf;
+  background: #d4e1fc;
+  box-shadow: inset 0 0 7px #a2aaba, 0 -3px 3px #b9b9b5, 0 4px 4px #f4f4f4;
+}
+
+input[type="submit"] {
+  cursor: pointer;
+}
+
+input.nameinput {
+  /* background: rgba(0, 0, 0, 0.4); */
+  padding-left: 20px;
+}
+
+input.emailinput {
+  /* background: rgba(0, 0, 0, 0.4); */
+  padding-left: 20px;
+}
+
+input.message {
+  /* background: rgba(0, 0, 0, 0.4); */
+  padding-left: 20px;
+}
+
+select.indent {
+  padding-left: 20px;
+  cursor: pointer;
+}
+
+::-webkit-input-placeholder {
+  color: #fff;
+}
+
+:-moz-placeholder {
+  color: #fff;
+}
+
+:-ms-input-placeholder {
+  color: #fff;
+}
+
+textarea,
+input,
+.indent {
+  outline: none;
+}
+
+input:focus,
+textarea:focus,
+.indent:focus {
+  background: #adc6ff;
+  box-shadow: 0 0 1px 3px #fcb8b8;
+  border: 1px solid #fcb8b8;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  #perspective {
+    position: fixed;
+    top: 190px;
+    left: 50%;
+    margin-left: -120px;
+    perspective: 1000;
+  }
+  #container {
+    width: 300px;
+    height: 210px;
+  }
+
+  .about_img img {
+    width: 40%;
+  }
+
+  .aboutimgborder{
+    margin-top: 20px;
+    font-family: 'Sofia', sans-serif;
+  }
+
+  .button {
+    width: 100px;
+    line-height: 100px;
+    background-size: 150px;
+  }
+
+  .button.con {
+    margin-left: 85px;
+    margin-top: 60px;
+  }
+
+  .button.send {
+    margin-left: 70px;
+    margin-top: 5px;
+  }
+
+  #letter {
+    width: 400px;
+    height: 150px;
+  }
+
+  #letter hgroup h1 {
+    font-size: 1.5em;
+    font-family: "Sofia", sans-serif;
+  color: #62412a;
+  text-align: center;
+  text-shadow: 0px 2px 1px rgb(255, 207, 155);
+  font-weight: bold;
+  }
+
+  #letter p {
+    margin: 10px 20px 0 20px;
+  }
+  #open {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 0;
+    width: 100%;
+    border-top: 88px solid rgb(159, 128, 103); /* envelope flap */
+    border-left: 120px solid transparent;
+    border-right: 120px solid transparent;
+    transform-origin: center top;
+    z-index: 10;
+  }
+  
+  #folds {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 0;
+    height: 0;
+    border-left: 130px solid rgba(167, 131, 101, 0.677); /* left grey fold envelope back */
+    border-top: 88px solid transparent;
+    border-bottom: 88px solid transparent;
+    z-index: 5;
+  }
+  
+  #folds:after {
+    content: "";
+    position: absolute;
+    bottom: -100px;
+    left: -130px;
+    height: 0;
+    width: 200px;
+  
+    border-bottom: 130px solid rgba(159, 128, 103, 0.526); /* bottom fold envelope back */
+    border-left: 150px solid transparent;
+    border-right: 150px solid transparent;
+  }
+  
+  #folds:before {
+    content: "";
+    position: absolute;
+    top: -88px;
+    right: -120px;
+    width: 100%;
+    height: 0;
+    border-right: 130px solid rgba(167, 131, 101, 0.362); /* right grey fold envelope back */
+    border-top: 88px solid transparent;
+    border-bottom: 88px solid transparent;
+  }
+  
+}
+
+@media (max-width: 490px) {
+  body {
+    height: 100%;
+    background-image: url("http://www.designbolts.com/wp-content/uploads/2013/02/Free-Seamless-Wood-Textures-Patterns-For-3D-Mapping-2.jpg");
+    font-family: 'Pacifico', cursive;
+    -webkit-font-smoothing: antialiased;
+    background-image: url(../images/teaserbg.png);
+    background-size: 290% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  }
+  #perspective {
+    position: fixed;
+    top: 35%;
+    left: 50%;
+    margin-left: -120px;
+    perspective: 1000;
+  }
+  #container {
+    width: 250px;
+    height: 175px;
+  }
+
+  .about_img img {
+    width: 40%;
+  }
+  .aboutimgborder{
+    margin-top: 20px;
+    font-family: 'Sofia', sans-serif;
+  }
+
+  .button {
+    text-align: center;
+    width: 100px;
+    height: auto;
+    padding: 0 1em;
+    position: relative;
+    z-index: 11;
+    transition: none;
+    background:url(../images/stamp.png) no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: 110px;
+    cursor:pointer;
+    font-family: "Sofia", sans-serif;
+    font-weight: bold;
+    font-size: 4vw;
+    text-shadow: 0 -1px 1px #ffffff;
+    text-decoration: none;
+    color: rgb(32, 15, 3);
+    line-height: 130px;
+    display: inline-block;
+    transition: all 0.2s ease-in-out;
+    border-radius: 100%;
+  }
+
+  .button:hover {
+    background-size: 120px;
+  }
+
+  .button.con {
+    position: absolute;
+    margin-left: 75px;
+    margin-top: 30px;
+    font-size: 1em;
+  }
+
+  .button.send {
+    margin-left: 50px;
+    margin-top: 5px;
+  }
+
+  #letter {
+    width: 240px;
+    height: 130px;
+
+  }
+
+  #letter hgroup h1 {
+    font-size: 1.2em;
+  }
+
+  #letter p {
+    margin: 10px 15px 0 15px;
+    font-size: 0.83em;
+  }
+
+  #open {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 0;
+    width: 100%;
+    border-top: 88px solid rgb(159, 128, 103); /* envelope flap */
+    border-left: 120px solid transparent;
+    border-right: 120px solid transparent;
+    transform-origin: center top;
+    z-index: 10;
+  }
+  
+  #folds {
+    
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 0;
+    height: 0;
+    border-left: 130px solid rgb(167, 131, 101); /* left grey fold envelope back */
+    border-top: 88px solid transparent;
+    border-bottom: 88px solid transparent;
+    z-index: 5;
+  }
+  
+  #folds:after {
+    content: "";
+    position: absolute;
+    bottom: -88px;
+    left: -130px;
+    height: 0;
+    width: 200px;
+  
+    border-bottom: 88px solid rgb(159, 128, 103); /* bottom fold envelope back */
+    border-left: 125px solid transparent;
+    border-right: 125px solid transparent;
+  }
+  
+  #folds:before {
+    content: "";
+    position: absolute;
+    top: -88px;
+    right: -120px;
+    width: 100%;
+    height: 0;
+    border-right: 130px solid rgb(167, 131, 101); /* right grey fold envelope back */
+    border-top: 88px solid transparent;
+    border-bottom: 88px solid transparent;
+  }
+}
