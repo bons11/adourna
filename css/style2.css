@@ -10,7 +10,7 @@ body {
   font-family: 'Pacifico', cursive;
   -webkit-font-smoothing: antialiased;
   background-image: url(../images/teaserbg.png);
-  background-size: 100% 100%;
+  background-size: 1325px 100%;
 background-repeat: no-repeat;
 background-position: center;
 }
@@ -394,6 +394,12 @@ textarea:focus,
   box-shadow: 0 0 1px 3px #fcb8b8;
   border: 1px solid #fcb8b8;
   overflow: hidden;
+}
+
+@media (min-width:1326px){
+  body{
+  background-size: 100% 100%;
+  }
 }
 
 @media (max-width: 490px) {
